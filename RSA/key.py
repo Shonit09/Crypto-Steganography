@@ -40,7 +40,7 @@ def dGenerator(e,m):
         if (ee * i )% m== 1:
             return i
 def main():
-    PrimeList = [x for x in range(10,200) if isPrime(x)]
+    PrimeList = [x for x in range(10,50) if isPrime(x)]
     while True:
         p = rm.choice(PrimeList)
         q = rm.choice(PrimeList)
@@ -49,10 +49,11 @@ def main():
     if isPrime(p) and isPrime(q):
         n,m = nmGenerator(p,q)
         e = eGenerator(m)
-        fd = open("Repository.txt","w")
+        fd = open("rsa_key.txt","w")
         fd.write(str(n)+"\n"+str(e))
         fd.close()
         d = dGenerator(e,m)
         print("private key is : ",d)
+
 if __name__ == '__main__':
     main()

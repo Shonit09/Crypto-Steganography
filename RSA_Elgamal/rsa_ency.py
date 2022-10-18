@@ -1,3 +1,4 @@
+import elg_decy as elgDecy
 def encryption(P, e, n):
     C = []
     new = []
@@ -10,11 +11,9 @@ def encryption(P, e, n):
     return C
 
 def main():
-    FileName = 'Repository.txt'
-    fd = open(FileName)
-    n = int(fd.readline())
-    e = int(fd.readline())
-    fd.close()
+    lst=elgDecy.main()
+    n=int(lst[0])
+    e=int(lst[0])
     P = input("Enter Message : ")
     data1 = encryption(P, e, n)
     EncryptedData = []
